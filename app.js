@@ -36,7 +36,7 @@ var server = http.createServer(function (req, res) {
 		var jsonobj=JSON.parse(data);
 	 	//console.log(jsonobj);
 	   	var data=jade.renderFile('./candle1.jade',{obj: jsonobj});
-		//console.log(data);
+		console.log('Data No...'+data.length);
             	res.write(data);
             	res.end();
 	    });
