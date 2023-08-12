@@ -1,0 +1,30 @@
+doctype html
+html
+head
+body
+
+-function convDate(dateString){
+    -var options = { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false };
+    -var offset = 12;
+    -var date = new Date((dateString-offset*60*60)*1000).toLocaleString('en-US', options);
+    -return date;
+-}
+
+div
+table(border=1)
+    thead
+        th Date
+        th Open
+        th High
+        th Low
+        th Close
+    - var lastType;
+    each o in obj
+            tbody
+                tr
+                    td #{convDate(o.time)} 
+                    td #{o.open}
+                    td #{o.max} 
+                    td #{o.min}
+                    td #{o.close}
+
